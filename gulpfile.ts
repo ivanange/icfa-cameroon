@@ -174,7 +174,7 @@ exports.default = series(
     optimizeImages
   ),
   test,
-  deploy
+  // deploy
 );
 
 // exports.default = series(
