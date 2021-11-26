@@ -1,0 +1,35 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - article
+    - articles
+    - opportunity
+    - tags
+    - featured
+  addAllPagesToCollections: true
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+permalink: /articles/tags/{{ tag }}/
+name: article
+layout: layouts/empty.njk
+---
+
+{% extends "layouts/article.njk" %}
+
+{% block content %}
+
+  <div class=" py-10 flex">
+    {% include "article-taglist.njk" %}
+    <div class="articles">
+    {% set articleList = collections[ tag ] %}
+    {% include "articlelist.njk" %}
+    </div>
+
+  </div>
+
+{% endblock %}

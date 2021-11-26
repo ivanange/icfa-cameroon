@@ -1,0 +1,70 @@
+---
+title: About us
+
+---
+
+{% extends "layouts/base.njk" %}
+{% block styles %}
+<link href="/assets/css/style1.css" media="all" rel="stylesheet" type="text/css">
+{#
+<link rel="stylesheet" href="{{bundle.css.about}}" /> #}
+{% endblock %}
+{% block scripts %}
+{#
+<script src="{{bundle.js.about}}" defer="true"></script> #}
+{% endblock %}
+
+{% block content %}
+<div class="cols" id="content">
+  <div class="col last" style="margin-bottom: 30px;">
+    <div class="entry">
+      <h1 class="title">About us</h1>
+      <p>
+        ICFA Cameroon is a local branch of ICFA with the same vision but offering
+        end to end services due to greater proximity. Our goal is to delocalize ICFA to Cameroon for you.
+      </p>
+      <div class="cl">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+  <div class="col last">
+    <div class="entry">
+      <h1 class="title">Contact us</h1>
+      <p>For all enquries about membership please contact the Institute of Certified Forensic Accountants at the address
+        below or email us.</p>
+      <h2>
+        <strong>
+          Address
+          <img class="map_image" height="352" src="/assets/css/images/map_image.png" width="376">
+        </strong>
+      </h2>
+      <p>&nbsp;</p>
+      <p>
+        <strong>
+          Institute of Certified<br>
+          Forensic Accountants <br>
+        </strong>
+        Yaoundé, Cameroon <br>
+      </p>
+      <p>
+        <strong>Monday to Friday</strong><br>
+        9am to 4pm (GMT +1)<br>
+        Tel: &nbsp;&nbsp;&nbsp; + 237 677 65 80 51<br>
+      <p>Email:<a href="/mailto:info@forensicglobal.org">info@forensicglobal.org </a><br>
+        &nbsp;</p>
+      <p>
+        <strong>Customer Service Statement </strong>
+      </p>
+      <p>The Institute of Certified Forensic Accountants is committed to providing a quality service and ensuring we
+        deal with everyone efficiently and fairly.</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <div class="cl">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cl"></div>
+{% endblock %}

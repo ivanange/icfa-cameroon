@@ -1,0 +1,53 @@
+---
+eleventyComputed:
+  title: "{{page.fileSlug | replace('-', ' ') | replace('_', ' ') | replace(',, ', '-') | safe }}"
+---
+
+{% extends "layouts/article.njk" %}
+
+{% block metas %}
+	<meta name="description"
+		content="{{description}}"
+		lang="fr">
+	<meta name="keywords" 
+		content="{{ tags.concat(keywords)|join(', ')}}"
+		lang="fr">
+{% endblock %}
+
+{% block content %}
+	<div class="py-4 px-12 flex flex-col justify-center items-center w-full max-w-full">
+		{% if pdf %}
+			{% if pdf.local|default(true) %}
+				{{embeds.localPdf(pdf)}}
+			{% else %}
+				{{embeds.pdf(pdf)}}
+			{% endif %}
+		{% endif %}
+
+		{% if video %}
+			{% if video.local|default(true) %}
+				{{embeds.localVideo(video)}}
+			{% else %}
+				{{embeds.video(video)}}
+			{% endif %}
+		{% endif %}
+
+		{% if youtube %}
+			{{embeds.youtube(youtube)}}
+		{% endif %}
+
+		{{content | safe}}
+
+		<div class="mt-4 mb-4 px-6 w-full flex justify-end items-center text-gray-800">
+			<span class="pr-5">Par {{author}}</span>
+			<span>Le {{page.date | readableDate }}</span>
+		</div>
+		<div class="tags flex px-4 py-5 flex-shrink-0 w-full flex-wrap">
+			<h3 class="w-full font-semibold text-lg mb-3 pl-2 border-b pb-1">Tags</h3>
+			{% for tag in tags %}
+				{% set tagUrl %}/articles/tags/{{ tag }}/{% endset %}
+				<a href="{{ tagUrl | url }}" class="post-tag inline-block px-3 bg-orange-300 hover:bg-orange-400 duration-300 rounded-md w-fit-content mr-3 text-sm text-center capitalize">{{ tag }}</a>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

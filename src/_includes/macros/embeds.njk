@@ -1,0 +1,30 @@
+{% set path = '/assets/files/' %}
+
+{% set thumbnailspath = '/assets/img/thumbnails/' %}
+
+{% macro pdf(pdf, src) %}
+	<embed class="flex-grow px-8" src="{{ src|default(pdf.src, true) }}" width="{{ pdf.width|default('100%', true) }}" height="{{ pdf.height|default('auto', true) }}" type="application/pdf" style="height: max( calc( 100vh - 70px ), 400px);"/>
+{% endmacro %}
+
+{% macro localPdf(entry) %}
+	{% set src = [path, entry.src]|join %}
+	{{pdf(entry, src)}}
+{% endmacro %}
+
+{% macro video(video, src, alt) %}
+	<video class=" flex-shrink max-w-full rounded" controls src="{{ src|default(video.src, true) }}" width="{{ video.width|default('auto', true) }}" height="{{ video.height|default('auto', true) }}" style="min-width:300px; max-height:calc( 100vh - 70px );" alt="{{alt}}"/>
+{% endmacro %}
+
+{% macro localVideo(entry) %}
+	{% set src = [path, entry.src]|join %}
+	{{video(entry, src)}}
+{% endmacro %}
+
+
+{% macro thumbnail(entry) %}
+	<img src="{{ thumbnailspath }}{{ entry.src|default('logo-minimal.svg', true) }}" width="{{ entry.width|default('250', true) }}" height="{{ entry.height|default('auto', true) }}"/>
+{% endmacro %}
+
+{% macro youtube(link) %}
+	<iframe class=" flex-shrink max-w-full rounded" width="{{ link.width|default('auto', true) }}" height="{{ link.height|default('auto', true) }}" src="{{link.src}}" style="min-width:300px; max-height:calc( 100vh - 70px );" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% endmacro %}

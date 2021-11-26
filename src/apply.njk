@@ -1,0 +1,33 @@
+---
+title: Apply
+
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block styles %}
+  <link href="/assets/css/style.css" media="all" rel="stylesheet" type="text/css"/>
+  {# <link rel="stylesheet" href="{{bundle.css.index}}"> #}
+{% endblock %}
+
+{% block scripts %}
+  {# <script src="{{bundle.js.index}}" defer="true"></script> #}
+{% endblock %}
+
+{% block banner %}{% endblock %}
+
+{% block content %}
+  <div class="cols" id="content">
+    <div class="col last">
+      <div class="entry" style="width: 700px;">
+        <h1 class="title">APPLY NOW</h1>
+        <script type="text/javascript" src="https://form.jotform.com/jsform/201686417763260"></script>
+        <iframe title="Membership Application Form" src="" allowtransparency="true" allow="geolocation; microphone; camera" allowfullscreen="true" name="201686417763260" id="201686417763260" style="width: 700px; min-width: 100%; display: block; overflow: hidden; border: none; height: 580px;" scrolling="no"></iframe>
+        <div class="cl">
+									&nbsp;
+								</div>
+      </div>
+    </div>
+  </div>
+  <div class="cl">&nbsp;</div>
+{% endblock %}

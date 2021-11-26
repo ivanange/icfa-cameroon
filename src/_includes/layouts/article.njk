@@ -1,0 +1,31 @@
+{% extends "layouts/base.njk" %}
+
+{% import "macros/embeds.njk" as embeds %}
+
+{% block styles %}
+	<link rel="stylesheet" href="{{bundle.css.article}}">
+{% endblock %}
+
+{% block scripts %}
+	<script src="{{bundle.js.article}}" defer="true"></script>
+{% endblock %}
+
+{% if banner|default(true) %}
+	{% block banner %}
+		<div class="h-0 pb-article-header bg-gray-300 relative" style="min-height: 140px;">
+			<div class="absolute w-full h-full overflow-x-hidden flex">
+				<div id="banner" class="slide-item bg-no-repeat bg-cover bg-center w-full h-full flex-shrink-0 flex-grow-0"></div>
+			</div>
+			<div class="main-content absolute h-full w-full flex flex-col justify-end md:justify-center items-center z-10 text-gray-100" style="background-color:#00000066">
+				<h1 class="text-lg sm:text-2xl pb-4 sm:pb-8 md:pb-0 md:text-3xl lg:text-4xl xl:text-5xl font-hairline text-center leading-tight lg:leading-snug xl:leading-normal px-3 capitalize">
+					{{title|truncate(150)}}
+				</h1>
+			</div>
+		</div>
+	{% endblock %}
+{% endif %}
+
+
+{% block content %}
+	{{content|safe}}
+{% endblock %}

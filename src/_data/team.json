@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "name": "Dr Taptue Pierre",
+        "image": "taptue-pierre-profile.jpeg",
+        "title": "CEO",
+        "social": {
+            "linkedin": "",
+            "facebook": "",
+            "twitter": "",
+            "email": "",
+            "phone": "699925020"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Dr Bopda Athanase",
+        "image": "Bopda-Athanase.jpg",
+        "title": "CEO",
+        "social": {
+            "linkedin": "",
+            "facebook": "",
+            "twitter": "",
+            "email": "bopda20001@yahoo.com",
+            "phone": ""
+        }
+    },
+    {
+        "id": 3,
+        "name": "Mme Ngamngne Louise Angeline",
+        "image": "louisse-angeline.jpg",
+        "title": "Responsable Communication et Documentation",
+        "social": {
+            "linkedin": "",
+            "facebook": "",
+            "twitter": "",
+            "email": "",
+            "phone": ""
+        }
+    }
+]

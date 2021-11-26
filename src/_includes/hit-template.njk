@@ -1,0 +1,14 @@
+<script type="text/html" id="hit-template">
+	<div class="hit">
+		<p class="hit-name">
+			{% raw %}
+				{{#helpers.highlight}}
+					{ "attribute": "title" }
+				{{/helpers.highlight}}
+				{{#helpers.highlight}}
+					{ "attribute": "content" }
+				{{/helpers.highlight}}
+			{% endraw %}
+		</p>
+	</div>
+</script>

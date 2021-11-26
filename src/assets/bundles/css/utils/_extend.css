@@ -1,0 +1,67 @@
+* {
+    @apply bg-transparent;
+    scroll-behavior: smooth;
+    --nav-height: 50px;
+}
+
+
+.flex-center {
+    @apply flex justify-center items-center;
+}
+
+.rounded-50 {
+    border-radius: 50%;
+}
+
+.delay-\.5s {
+    animation-delay: 500ms;
+}
+
+.delay-\.75s {
+    animation-delay: 750ms;
+}
+
+.delay-1\.25s {
+    animation-delay: 1250ms;
+}
+
+.delay-1\.5s {
+    animation-delay: 1500ms;
+}
+
+.delay-1\.75s {
+    animation-delay: 1750ms;
+}
+
+.delay-2\.25s {
+    animation-delay: 2250ms;
+}
+
+.delay-2\.5s {
+    animation-delay: 2500ms;
+}
+
+.delay-2\.75s {
+    animation-delay: 2750ms;
+}
+
+.z--1 {
+    z-index: -1;
+}
+
+.rounded-50 {
+    border-radius: 50%;
+}
+
+#banner {
+    background-image: url("/assets/img/header/header-activite.jpg");
+}
+
+.anchor-fix::before { 
+    display: block; 
+    content: " "; 
+    margin-top: calc(-1 * var(--nav-height)); 
+    height: var(--nav-height); 
+    visibility: hidden; 
+    pointer-events: none;
+  }

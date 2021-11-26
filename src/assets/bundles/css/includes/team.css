@@ -1,0 +1,8 @@
+.scroll-button {
+    top: calc(50% - 2rem);
+}
+
+.scroll-button.inactive,
+.scroll-button.inactive * {
+    opacity: 0;
+}

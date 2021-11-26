@@ -1,0 +1,10 @@
+<h1 id="team" class="py-3 text-4xl font-semibold text-gray-900 text-center mt-8 uppercase anchor-fix">
+	Partenaires
+</h1>
+<div class="slides w-full py-10 flex relative justify-evenly items-center max-w-screen-2xl mb-10">
+	{% for partner in partners %}
+		<a target="_blank" href="{{partner.url}}">
+			<img src="/assets/img/partners/{{partner.image}}" alt="ooscisca partner: {{partner.name}}">
+		</a>
+	{% endfor %}
+</div>

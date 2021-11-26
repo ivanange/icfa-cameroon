@@ -1,0 +1,41 @@
+---
+title: Articles
+
+layout: "layouts/empty.njk"
+
+eleventyNavigation:
+  key: Articles
+  order: 10 
+
+override:tags: []
+---
+
+{% extends "layouts/article.njk" %}
+
+{% block metas %}
+	<meta name="description"
+		content="a list of ooscisca article ordered by latest, with possibility to filter by tag"
+		lang="en">
+	<meta name="description"
+				content="a liste des articles d'ooscisca commencant par les plsu récents, avec la possibilité de filtrer par tag"
+		lang="fr">
+	<meta name="keywords" 
+		content="ooscisca, articles, tags"
+		lang="en">
+	<meta name="keywords" 
+		content="ooscisca, articles, tags"
+		lang="fr">
+{% endblock %}
+
+{% block content %}
+
+  <div class=" py-10 flex">
+    {% include "article-taglist.njk" %}
+    <div class="articles pr-6">
+    {% set articleList = collections.article %}
+    {% include "articlelist.njk" %}
+    </div>
+  </div>
+
+{% endblock %}
+

@@ -1,0 +1,240 @@
+---
+title: Home
+
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block styles %}
+<link href="/assets/css/style.css" media="all" rel="stylesheet" type="text/css" />
+{#
+<link rel="stylesheet" href="{{bundle.css.index}}"> #}
+{% endblock %}
+
+{% block scripts %}
+{#
+<script src="{{bundle.js.index}}" defer="true"></script> #}
+{% endblock %}
+
+{% block banner %}
+<!-- Slider -->
+<div id="slider">
+  <a href="" id="slider-prev" name="slider-prev">&nbsp;</a>
+  <div class="slider-content">
+    <div class="jcarousel-container jcarousel-container-horizontal" style="position: relative; display: block">
+      <div class="jcarousel-clip jcarousel-clip-horizontal" style="overflow: hidden; position: relative">
+        <ul class="jcarousel-list jcarousel-list-horizontal">
+          <li class="
+          jcarousel-item
+          jcarousel-item-horizontal
+          jcarousel-item-1
+          jcarousel-item-1-horizontal
+        " jcarouselindex="1" style="float: left; list-style: none">
+            <a href="/apply" class="flex justify-end relative items-center" style="height: 350px;">
+              <div class="relative w-1/2 rounded-r-good left-100 flex-shrink-0 bg-primary text-place">
+                <div>
+                  <h2 class="title"> Leading the way in Forensic Accounting Excellence in Cameroon</h2>
+                  <p>
+                    Welcome to Cameroon's Institute of Certified Forensic Accountants. <br>
+                    ICFA Cameroon offers education and support for forensic accountants from all around the country.
+                    Find out more about ICFA Cameroon Membership.
+                  </p>
+                </div>
+              </div>
+              <img class="object-cover  flex-shrink-0 h-full" alt="" width="700" id="membership" name="membership"
+                src="/assets/css/images/Financial council black men.jpeg" />
+            </a>
+          </li>
+          <li class="
+                      jcarousel-item
+                      jcarousel-item-horizontal
+                      jcarousel-item-1
+                      jcarousel-item-1-horizontal
+                    " jcarouselindex="1" style="float: left; list-style: none">
+            <a href="/courses" class="flex justify-end relative items-center" style="height: 350px;">
+              <div class="relative w-1/2 rounded-r-good left-100 flex-shrink-0 bg-primary text-place">
+                <div>
+                  <h2 class="title">
+                    Become a Certified Professional Forensic Accountant
+                  </h2>
+                  <p>
+                    Discover our 100% online Forensic accounting, Risk Management,
+                    Leadership, Management certification <br> courses and more. <br>
+                    Find out more of ICFA Cameroon Courses.
+                  </p>
+                </div>
+              </div>
+              <img class="object-cover flex-shrink-0 h-full" alt="" width="700" id="courses" name="courses"
+                src="/assets/css/images/man working with smile.jpeg" />
+            </a>
+          </li>
+
+          <li class="
+                      jcarousel-item
+                      jcarousel-item-horizontal
+                      jcarousel-item-1
+                      jcarousel-item-1-horizontal
+                    " jcarouselindex="1" style="float: left; list-style: none">
+            <a href="/tutors/kelly" class="flex justify-end relative items-center" style="height: 350px;">
+              <div class="relative w-1/2 rounded-r-good left-100 flex-shrink-0 bg-primary text-place">
+                <div>
+                  <h2 class="title">
+                    Skilled and Experienced Tutors to Transmit Excellence
+                  </h2>
+                  <p>
+                    Courses are conceivec and delivered by highly qualified and experienced tutors
+                    with skills recognized world wide. <br>
+                    Find out more of ICFA Cameroon Tutors.
+                  </p>
+                </div>
+              </div>
+              <img class="object-cover flex-shrink-0 h-full" alt="" width="700" id="tutors" name="tutors"
+                src="/assets/css/images/man helping female collegue.jpeg" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <a href="" id="slider-next" name="slider-next">&nbsp;</a>
+  <div class="slider-pagination">
+    <ul>
+      <li>
+        <a href="/apply" class="">1</a>
+      </li>
+      <li>
+        <a href="/courses" class="">2</a>
+      </li>
+      <li>
+        <a href="/tutors" class="">3</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- End Slider -->
+{% endblock %}
+
+{% block content %}
+<div class="cols" id="content">
+  <div class="col col-2">
+    <div class="entry">
+      <h2 class="title">About ICFA <br> Cameroon</h2>
+      <img border="0" height="151" src="/assets/css/images/about_us.jpg" usemap="#Map" width="240" />
+      <map id="Map" name="Map"><area coords="4,5,241,151" href="/about" shape="rect" /></map><br />
+      <br />
+      <p>
+        The ICFA Cameroon is a branch of ICFA that represents
+        accounting professionals who work in the
+        forensic arena. Our focus is on professional values and high
+        ethical standards, plus the opportunity for study and career
+        advancement in the field of forensic accounting.
+      </p>
+      <p>
+        <a class="more" href="/about">Find out more about ICFA Cameroon</a>
+      </p>
+      <div class="cl">&nbsp;</div>
+    </div>
+  </div>
+  <div class="col col-2">
+    <div class="entry">
+      <h2 class="title">ICFA Cameroon Membership</h2>
+      <img border="0" height="151" src="/assets/css/images/members_small.jpg" usemap="#Map2" width="240" />
+      <map id="Map2" name="Map2"><area coords="6,0,237,147" href="/apply" shape="rect" /></map><br />
+      <br />
+      <p>
+        By electing to become a member of the ICFA Cameroon, you show your
+        commitment to the forensic accounting profession and agree to
+        abide by the Institute's Professional Standards.
+      </p>
+      <p>
+        <a class="more" href="/apply">Find out more about ICFA Cameroon membership
+        </a>
+      </p>
+      <div class="cl">&nbsp;</div>
+    </div>
+  </div>
+  <div class="col col-2">
+    <div class="entry">
+      <h2 class="title">
+        ICFA Cameroon <br> Courses
+      </h2>
+      <img border="0" height="151" src="/assets/css/images/cpfa_designation.jpg" usemap="#Map3" width="240" />
+      <map id="Map3" name="Map3"><area coords="4,5,237,148" href="/courses" shape="rect" /></map><br />
+      <br />
+      <p>
+        We Offer a wide range of premium quality courses to our members amongst which the
+        <a href="/courses">
+          <font color="#0066CC">
+            Certified Professional Forensic Accountant - CPFAcct
+          </font>
+        </a> which is the premier designation of Institute of Certified
+        Forensic Accountants. The program is 100% online.
+      </p>
+      <p>
+        <a class="more" href="/courses">
+          More on ICFA Cameroon courses
+        </a>
+      </p>
+      <div class="cl">&nbsp;</div>
+    </div>
+  </div>
+  <div class="col col-2 last">
+    <div class="entry">
+      <h2 class="title">Download ICFA <br> Cameroon Brochure</h2>
+      <img border="0" height="151" src="/assets/css/images/brochure.jpg" usemap="#Map6" width="238" />
+      <map id="Map6" name="Map6">
+        <area alt="Borchure download" coords="3,2,237,150"
+          href="http://www.forensicglobal.org/pdf/icfa_new_brochure.pdf" shape="rect" target="_blank" />
+      </map>
+      <br />
+      <br />
+      <p>
+        Get our PDF brochure with summary of all about ICFA Cameroon,
+        its membership conditions together with all courses information.
+      </p>
+      <p>
+        <a class="more" href="http://www.forensicglobal.org/pdf/icfa_new_brochure.pdf" target="_blank">
+          Download ICFA Cameroon brochure
+        </a>
+      </p>
+      <div class="cl">&nbsp;</div>
+    </div>
+  </div>
+  <div class="cl">&nbsp;</div>
+</div>
+<p>&nbsp;</p>
+<div class="col col-3">
+  <div class="entry">
+    <h2 class="title">Latest Jobs</h2>
+    <p>
+      <iframe frameborder="0" id="mdgxWidgetiFrame" src="http://www.gaapweb.com/widget/bootstrap/job/#i=25"
+        style="width: 100%; border: 0; height: 400px; background: 0"></iframe>
+    </p>
+    <p>
+      <a class="more" href="/financejobs.html">View all jobs </a>
+    </p>
+    <div class="cl">&nbsp;</div>
+  </div>
+</div>
+<div class="col col-2 last">
+  <div class="entry">
+    <h2 class="title">ICFA Cameroon Magazine</h2>
+    <img border="0" height="151" src="/assets/css/images/magazine_small.jpg" usemap="#Map5" width="238" />
+    <map id="Map5" name="Map5"><area alt="Accounting &amp; Forensic Review" coords="5,3,231,146"
+        href="https://www.scoop.it/topic/forensic-accounting-review" shape="rect" target="_blank" /></map><br />
+    <br />
+    <p>
+      The ICFA online magazine - Accounting and Forensic Review is
+      available to all members.Constntly updated with interesting
+      articles covering the topics of accounting, fraud and criminal
+      activity.
+    </p>
+    <p>
+      <a class="more" href="https://www.scoop.it/topic/forensic-accounting-review" target="_blank">Read our online
+        magazine
+      </a>
+    </p>
+  </div>
+</div>
+<div class="cl">&nbsp;</div>
+{% endblock %}

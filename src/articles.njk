@@ -1,0 +1,17 @@
+---
+permalink: /articles.json
+--- 
+
+{% set articles = collections.article | reverse %}
+[
+{% for article in articles %}
+	{
+		"title": "{{article.data.title | safe}}",
+		"date":"{{ page.date }}",
+		"url":"{{site.host}}{{article.data.url|default(article.url, true)|url|safe}}",
+		"content":"{{ article.data.description | safe}}"
+	}
+    {% if not loop.last %} , {% endif %}
+    
+{% endfor %}
+]

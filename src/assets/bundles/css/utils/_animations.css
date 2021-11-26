@@ -1,0 +1,15 @@
+@import "animate.css";
+
+.animate {
+    animation: fly 10s ease-in-out 0s infinite alternate both;
+}
+
+@keyframes fly {
+    from {
+        @apply text-orange-100;
+    }
+
+    to {
+        @apply text-orange-700;
+    }
+}

@@ -1,0 +1,7 @@
+.objectives>li::before {
+    content: " ";
+    background-image: url('/assets/img/icons/badge.svg');
+    left: calc(-1 * theme('height.8'));
+    top: 3px;
+    @apply w-6 h-6 bg-cover bg-center bg-no-repeat inline-block absolute;
+}

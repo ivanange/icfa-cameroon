@@ -1,0 +1,60 @@
+name: Build
+on:
+  push:
+    branches:
+      - deploy
+    paths:
+      - "public/**.jpg"
+      - "public/**.jpeg"
+      - "public/**.png"
+      - "public/**.webp"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build site
+    steps:
+      - name: checkout deploy
+        uses: actions/checkout@v2
+        with:
+          ref: "deploy"
+
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.16
+
+      - name: install needed packages and build
+        run: |
+          sudo npm install --save-dev --ignore-scripts install-peers
+          sudo npm i
+          sudo npm run build --if-present
+
+      - name: optimize images
+        id: calibre
+        uses: calibreapp/image-actions@master
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+
+      - name: commit changes
+        run: |
+          git config --local user.email "ivanangethe1@gmail.com"
+          git config --local user.name "ivanange"
+          git add -A
+          git commit -am "pushing to production"
+
+      - uses: actions/checkout@master
+
+      - name: Merge deploy -> master
+        uses: devmasx/merge-branch@v1.3.0
+        with:
+          type: now
+          from_branch: deploy
+          target_branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: push changes to production
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
