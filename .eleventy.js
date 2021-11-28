@@ -4,11 +4,10 @@ const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const site = require("./src/_data/site.js");
 
 module.exports = function (eleventyConfig) {
-
   // require them here to access eleventyConfig
-  const filters = require('./utils/filters.js')(eleventyConfig);
-  const transforms = require('./utils/transforms.js')(eleventyConfig);
-  const collections = require('./utils/collections.js')(eleventyConfig);
+  const filters = require("./utils/filters.js")(eleventyConfig);
+  const transforms = require("./utils/transforms.js")(eleventyConfig);
+  const collections = require("./utils/collections.js")(eleventyConfig);
 
   // add navigation plugin
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -28,15 +27,12 @@ module.exports = function (eleventyConfig) {
   if (production) {
     eleventyConfig.addPassthroughCopy("src/assets/!(img|bundles)/**");
   } else {
-
     // only ignore bundles
     eleventyConfig.addPassthroughCopy("src/assets/!(bundles)/**");
 
     // watch bundles
     eleventyConfig.addWatchTarget("./src/assets/bundles/");
   }
-
-
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
@@ -53,15 +49,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection(collectionName, collections[collectionName]);
   });
 
-
   return {
     dir: {
       input: "src",
-      output: "dist",
+      output: "docs",
     },
     htmlTemplateEngine: "njk",
 
     // 1.1 Enable eleventy to pass dirs specified above
     passthroughFileCopy: true,
   };
-};          
+};
