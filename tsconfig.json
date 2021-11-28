@@ -7,7 +7,7 @@
     "noEmitOnError": false,
     "showConfig": true,
     "target": "esnext",
-    "outDir": "dist",
+    "outDir": "docs",
     "allowJs": true,
     "sourceMap": true,
     "lib": ["DOM", "ES2015"]

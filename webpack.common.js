@@ -5,10 +5,12 @@ var path = require("path");
 
 module.exports = {
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use: [{
+        use: [
+          {
             loader: "babel-loader",
           },
           {
@@ -19,21 +21,23 @@ module.exports = {
       {
         test: /\.js$/i,
         exclude: /node_modules/,
-        use: [{
-          loader: "babel-loader",
-        }, ],
+        use: [
+          {
+            loader: "babel-loader",
+          },
+        ],
       },
     ],
   },
   plugins: [],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname),
+      "@": path.resolve(__dirname),
     },
     extensions: [".ts", ".tsx", ".js"],
   },
   output: {
     filename: "js/[name].js",
-    path: path.resolve(__dirname, "dist/assets/bundles"),
+    path: path.resolve(__dirname, "docs/assets/bundles"),
   },
 };

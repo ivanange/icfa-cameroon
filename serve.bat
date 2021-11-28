@@ -1,2 +1,2 @@
 @echo off
-php -S localhost:8001 -t public/
+php -S localhost:8001 -t docs/

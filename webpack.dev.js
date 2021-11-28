@@ -11,10 +11,11 @@ module.exports = merge.smart(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    contentBase: "./dist",
+    contentBase: "./docs",
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/,
         use: [
           "style-loader",

@@ -18,7 +18,7 @@ const ENTRIES: Array<{
 }> = require("./deps").default;
 
 /**
- * delete dist directory
+ * delete docs directory
  *
  * @param cb
  */
@@ -68,11 +68,11 @@ function UpdateBundleInfo(cb: () => void) {
         if (file.match("/css/")) {
           // css file
           let radical = getRadical(file);
-          acc.css[radical] = file.replace("./dist", "");
+          acc.css[radical] = file.replace("./docs", "");
         } else {
           // js file
           let radical = getRadical(file);
-          acc.js[radical] = file.replace("./dist", "");
+          acc.js[radical] = file.replace("./docs", "");
         }
         return acc;
       },
@@ -92,9 +92,9 @@ function UpdateBundleInfo(cb: () => void) {
  * @param cb
  */
 function optimizeImages() {
-  return src("src/assets/img/**")
+  return src("src/assets/css/images/**")
     .pipe(imagemin())
-    .pipe(dest("dist/assets/img/"));
+    .pipe(dest("docs/assets/css/images/"));
 }
 
 /**
@@ -145,7 +145,7 @@ function test(cb: () => void) {
 function deploy(cb: () => void) {
   // delete public dir
   rm(`public`, function () {
-    // rename dist to public
+    // rename docs to public
     fs.rename(DIST, "public", cb);
   });
 }
@@ -158,7 +158,7 @@ function onError(error, cb) {
   // log error
   console.log(error);
   fs.writeFile("./log", JSON.stringify(error), function (err) {
-    //restore dist.old to dist
+    //restore docs.old to docs
     // fs.rename(`${DIST}.old`, DIST, cb);
   });
 }
